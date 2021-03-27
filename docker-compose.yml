@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  app:
+    image: sampletodocicd:latest
+    ports:
+      - 8080:3000
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: mypassword
+      MYSQL_DB: dc-todos
+    
+  mysqldb:
+    image: mysql:5.7
+    volumes:
+      - dc-mysql-vol:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: mypassword
+      MYSQL_DATABASE: dc-todos   
+    
+volumes:
+  dc-mysql-vol:    
+    
+
