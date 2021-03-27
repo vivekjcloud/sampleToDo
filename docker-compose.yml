@@ -3,7 +3,7 @@ services:
   app:
     image: sampletodocicd:latest
     ports:
-      - 8080:3000
+      - 9100:3000
     environment:
       MYSQL_HOST: mysqldb
       MYSQL_USER: root
